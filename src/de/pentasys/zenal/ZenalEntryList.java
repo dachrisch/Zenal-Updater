@@ -1,26 +1,31 @@
 package de.pentasys.zenal;
 
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
-public class ZenalEntryList extends AbstractList<ZenalEntry> {
+public class ZenalEntryList {
 
-    private final List<ZenalEntry> entries = new ArrayList<ZenalEntry>();
+    private final SortedSet<ZenalEntry> entries = new TreeSet<ZenalEntry>();
 
-    @Override
     public int size() {
         return entries.size();
     }
 
-    @Override
     public boolean add(final ZenalEntry zenalEntry) {
         return entries.add(zenalEntry);
     }
 
-    @Override
-    public ZenalEntry get(final int position) {
-        return entries.get(position);
+    public ZenalEntry last() {
+        return entries.last();
+    }
+
+    public ZenalEntry first() {
+        return entries.first();
+    }
+
+    public Iterator<ZenalEntry> iterator() {
+        return entries.iterator();
     }
 
 }

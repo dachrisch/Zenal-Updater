@@ -47,7 +47,7 @@ public class ZenalEntryCreator {
     }
 
     public ZenalEntry last() {
-        return zenalEntryList.get(zenalEntryList.size() - 1);
+        return zenalEntryList.last();
     }
 
     public ZenalEntryList list() {
