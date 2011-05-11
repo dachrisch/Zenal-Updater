@@ -71,8 +71,8 @@ public class ZenalEntry implements Comparable<ZenalEntry> {
     }
 
     @Override
-    public int compareTo(ZenalEntry other) {
-        return new CompareToBuilder().append(this.from, other.from).toComparison();
+    public int compareTo(final ZenalEntry other) {
+        return new CompareToBuilder().append(from, other.from).toComparison();
     }
 
 }
