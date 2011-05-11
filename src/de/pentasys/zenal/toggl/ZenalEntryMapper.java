@@ -13,7 +13,7 @@ public class ZenalEntryMapper {
     private DateTime from;
     private DateTime till;
     private String description;
-    private String project;
+    private Project project;
     private Category category;
 
     public void setFrom(final String from) {
@@ -29,18 +29,18 @@ public class ZenalEntryMapper {
         if (description.toLowerCase().contains("anfahrt")) {
             category = Category.TRAVEL_START;
         } else if (description.toLowerCase().contains("rückfahrt") || description.toLowerCase().contains("rueckfahrt")) {
-            category = Category.TRAVEL_START;
+            category = Category.TRAVEL_END;
         } else {
             category = Category.PROJECT;
         }
     }
 
     public void setProject(final String project) {
-        this.project = project;
+        this.project = Project.valueOf(project.toUpperCase());
     }
 
     public ZenalEntry toZenalEntry() {
-        return new ZenalEntry(Project.valueOf(project.toUpperCase()), from, till, description, category);
+        return new ZenalEntry(project, from, till, description, category);
     }
 
 }

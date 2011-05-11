@@ -44,7 +44,7 @@ public class ZenalEntry implements Comparable<ZenalEntry> {
     }
 
     public String getProjectId() {
-        return project.getProjectId();
+        return null == project ? null : project.getProjectId();
     }
 
     public String getCategory() {

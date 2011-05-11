@@ -20,7 +20,6 @@ public class TogglRetrieverTest {
 
         assertThat(zenalEntries.size(), is(4));
         final ZenalEntry zenalEntry = zenalEntries.get(0);
-        System.out.println(zenalEntry);
         assertThat(zenalEntry.getDescription(), is("Anfahrt Ingolstadt"));
         assertThat(zenalEntry.getProjectId(), is("P080811.MED"));
         assertThat(zenalEntry.getFrom(), is(new DateTime(2011, 5, 10, 7, 50, 0, 0)));
@@ -29,4 +28,5 @@ public class TogglRetrieverTest {
 
         assertThat(zenalEntries.get(1).getDescription(), is("Rückfahrt"));
     }
+
 }
